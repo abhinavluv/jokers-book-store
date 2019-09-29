@@ -1,38 +1,38 @@
 import React from 'react';
-import './homepage.styles.scss';
+import styles from './homepage.module.scss';
 
 const homepage = (props) => {
     return (
-        <div className="homePage">
-            <div className="directory-menu">
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className="title">Biographies &amp; Auto-Biographies</h1>
-                        <span className="subtitle">Shop Now</span>
+        <div className={styles.homePage}>
+            <div className={styles.directoryMenu}>
+                <div className={styles.menuItem}>
+                    <div className={styles.content}>
+                        <h1 className={styles.title}>Biographies &amp; Auto-Biographies</h1>
+                        <span className={styles.subtitle}>Shop Now</span>
                     </div>
                 </div>
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className="title">Kids</h1>
-                        <span className="subtitle">Shop Now</span>
+                <div className={styles.menuItem}>
+                    <div className={styles.content}>
+                        <h1 className={styles.title}>Kids</h1>
+                        <span className={styles.subtitle}>Shop Now</span>
                     </div>
                 </div>
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className="title">Thriller</h1>
-                        <span className="subtitle">Shop Now</span>
+                <div className={styles.menuItem}>
+                    <div className={styles.content}>
+                        <h1 className={styles.title}>Thriller</h1>
+                        <span className={styles.subtitle}>Shop Now</span>
                     </div>
                 </div>
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className="title">Fiction</h1>
-                        <span className="subtitle">Shop Now</span>
+                <div className={styles.menuItem}>
+                    <div className={styles.content}>
+                        <h1 className={styles.title}>Fiction</h1>
+                        <span className={styles.subtitle}>Shop Now</span>
                     </div>
                 </div>
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className="title">Non-Fiction</h1>
-                        <span className="subtitle">Shop Now</span>
+                <div className={styles.menuItem}>
+                    <div className={styles.content}>
+                        <h1 className={styles.title}>Non-Fiction</h1>
+                        <span className={styles.subtitle}>Shop Now</span>
                     </div>
                 </div>
             </div>
