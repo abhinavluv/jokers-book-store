@@ -6,7 +6,7 @@ import Header from './components/header/header.component';
 import SignInSignUp from './pages/sign-in-sign-up/sign-in-sign-up.component';
 import './App.css';
 
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 class App extends Component {
     constructor(props) {
@@ -20,8 +20,22 @@ class App extends Component {
 
     componentDidMount() {
         // creates a user session
-        this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-            this.setState({ currentUser: user });
+        this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+            // this.setState({ currentUser: user });
+            // createUserProfileDocument(user);
+            if (userAuth) {
+                const userRef = await createUserProfileDocument(userAuth);
+                userRef.onSnapshot(snapShot => {
+                    this.setState({
+                        currentUser: {
+                            id: snapShot.id,
+                            ...snapShot.data()
+                        }
+                    });
+                });
+            } else {
+                this.setState({ currentUser: userAuth });
+            }
         });
     }
 
