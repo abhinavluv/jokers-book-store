@@ -9,3 +9,7 @@ a {
     text-decoration: none;
     color: #eee;
 }
+
+* {
+    box-sizing: border-box;
+}
